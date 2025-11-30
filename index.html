@@ -1,0 +1,25 @@
+def hesapla():
+    print("=== Ağırlıklı Not Hesaplama Programı ===")
+    print("Toplam %60 ve üzeriyse sınava girebilirsin.\n")
+
+    toplam = 0
+
+    while True:
+        ad = input("Sınav adı (bitirmek için 'q'): ")
+
+        if ad.lower() == "q":
+            break
+        
+        yuzde = float(input(f"{ad} yüzdesi (%): "))
+        notu = float(input(f"{ad} notun: "))
+
+        toplam += (yuzde / 100) * notu
+
+    print("\nToplam Not:", toplam)
+
+    if toplam >= 60:
+        print("Durum: ✔ Sınava girebilirsin!")
+    else:
+        print("Durum: ✘ Sınava giremezsin.")
+
+hesapla()
